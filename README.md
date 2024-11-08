@@ -1,70 +1,84 @@
-# Getting Started with Create React App
+# Gestor de Tareas - Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este es el frontend de la aplicación de gestión de tareas, construido con **React** y **React Bootstrap**. Permite a los usuarios crear, visualizar, actualizar y eliminar tareas.
 
-## Available Scripts
+## **Tabla de Contenidos**
 
-In the project directory, you can run:
+- [Características](#características)
+- [Prerrequisitos](#prerrequisitos)
+- [Instalación](#instalación)
+- [Ejecución](#ejecución)
+- [Estructura del Proyecto](#estructura-del-proyecto)
+- [Descripción de Componentes](#descripción-de-componentes)
+- [Notas Adicionales](#notas-adicionales)
 
-### `npm start`
+## **Características**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Formulario** para agregar y actualizar tareas.
+- **Lista de tareas** con opciones para editar y eliminar.
+- **Estilos** aplicados con React Bootstrap para una interfaz moderna y responsiva.
+- **Manejo de estado** con `useState` y efectos con `useEffect`.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## **Prerrequisitos**
 
-### `npm test`
+Antes de comenzar, asegúrate de tener instaladas las siguientes herramientas en tu máquina local:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [Node.js](https://nodejs.org/) (versión 20 o superior)
+- [npm](https://www.npmjs.com/)
 
-### `npm run build`
+## **Instalación**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Sigue estos pasos para configurar el proyecto en tu entorno local:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. **Clona el repositorio**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    ```bash
+    git clone https://github.com/francodibarra/task-manager-frontend.git
+    cd task-manager-frontend
 
-### `npm run eject`
+1. **Instala las dependencias**
+    ```bash
+    npm install
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## **Ejecución** 
+- Para iniciar la aplicación en modo de desarrollo:
+    ```bash
+    npm start
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- La aplicación se abrirá en http://localhost:3000.
+- Nota: Asegúrate de que el backend esté corriendo y accesible en http://localhost:8000 o actualiza las URL en las llamadas a la API si el backend se ejecuta en otro puerto.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## **Estructura del Proyecto**
+    task-manager-frontend/
+    ├── node_modules/
+    ├── public/
+    │   ├── index.html
+    │   └── favicon.ico
+    ├── src/
+    │   ├── components/
+    │   │   ├── TaskForm.js
+    │   │   ├── TaskItem.js
+    │   │   └── TaskList.js
+    │   ├── App.js
+    │   ├── App.css
+    │   ├── index.js
+    │   └── index.css
+    ├── package.json
+    └── README.md
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## **Descripción de Componentes**
+**TaskForm**
+- Permite agregar una nueva tarea o editar una existente.
+- Utiliza useState para manejar los campos del formulario.
+- Valida que el título no esté vacío antes de enviar.
 
-## Learn More
+**TaskItem**
+- Muestra la información de una tarea individual.
+- Proporciona botones para editar o eliminar la tarea.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+**TaskList**
+- Renderiza una lista de TaskItem.
+- Muestra un mensaje si no hay tareas disponibles.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## **Notas Adicionales**
+- Configuración del Backend: Por defecto, la aplicación asume que el backend está en http://localhost:8000. Si el backend se ejecuta en otro puerto o dominio, actualiza las llamadas a la API en App.js.
